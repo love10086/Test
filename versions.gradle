@@ -1,0 +1,89 @@
+ext.versions = [:]
+//def versions = [:]
+versions.supportLibraryVersion = "28.0.0"
+versions.eventbus = "3.0.0"
+versions.constraintLayout = "1.1.3"
+
+versions.multidex = "1.0.2"
+versions.rxpermissions = "0.9.4@aar"
+versions.glide = "4.7.1"
+versions.glideCompiler = "4.7.1"
+
+versions.zxingCore = "3.3.0"
+versions.barlibrary = "2.3.0"
+versions.swipebacklayout = "1.2.0"
+versions.viewanimator = "1.0.5"
+versions.flowlayout = "1.1.1"
+versions.rxpermissions = "0.10.2"
+
+versions.retrofit = "2.3.0"
+versions.converterGson = "2.3.0"
+versions.converterScalars = "2.1.0"
+versions.retrofit2Rxjava2Adapter = "1.0.0"
+versions.rxandroid = "2.0.1"
+versions.rxjava = "2.1.3"
+versions.okhttp3 = "3.12.0"
+versions.okhttpUtils = "3.8.0"
+
+versions.arouterCompiler = "1.2.2"
+versions.arouterApi = "1.4.1"
+
+versions.umengAnalytics = "6.1.4"
+versions.LRecyclerView = "1.5.4.3"
+versions.youthBanner = "1.4.10"
+
+versions.imagezoom = "1.0.4"
+versions.picasso = "2.5.2"
+versions.androidCrop = "1.0.1@aar"
+
+def build_versions = [:]
+build_versions.target_sdk = 28
+build_versions.compile_sdk = 28
+build_versions.min_sdk_version = 19
+build_versions.build_tools = "28.0.3"
+ext.build_versions = build_versions
+
+def deps = [:]
+deps.appcompat_v7 = "com.android.support:appcompat-v7:$versions.supportLibraryVersion"
+deps.support_v4 = "com.android.support:support-v4:$versions.supportLibraryVersion"
+deps.recyclerview_v7 = "com.android.support:recyclerview-v7:$versions.supportLibraryVersion"
+deps.cardview = "com.android.support:cardview-v7:$versions.supportLibraryVersion"
+deps.design = "com.android.support:design:$versions.supportLibraryVersion"
+deps.eventbus = "org.greenrobot:eventbus:$versions.eventbus"
+deps.constraintLayout = "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
+
+deps.multidex = "com.android.support:multidex:$versions.multidex"
+deps.rxpermissions = "com.tbruyelle.rxpermissions2:rxpermissions:$versions.rxpermissions"
+deps.glide = "com.github.bumptech.glide:glide:$versions.glide"
+deps.glideCompiler = "com.github.bumptech.glide:compiler:$versions.glideCompiler"
+
+
+deps.zxingCore = "com.google.zxing:core:$versions.zxingCore"
+deps.barlibrary = "com.gyf.barlibrary:barlibrary:$versions.barlibrary"
+deps.swipebacklayout = "cn.bingoogolapple:bga-swipebacklayout:$versions.swipebacklayout"
+deps.viewanimator = "com.github.florent37:viewanimator:$versions.viewanimator"
+deps.flowlayout = "com.hyman:flowlayout-lib:$versions.flowlayout"
+deps.rxpermissions = "com.github.tbruyelle:rxpermissions:$versions.rxpermissions"
+
+
+deps.retrofit = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+deps.converterGson = "com.squareup.retrofit2:converter-gson:$versions.converterGson"
+deps.converterScalars = "com.squareup.retrofit2:converter-scalars:$versions.converterScalars"
+deps.retrofit2Rxjava2Adapter = "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit2Rxjava2Adapter"
+deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.rxjava = "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+deps.okhttp3 = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3"
+deps.okhttpUtils = "com.qianwen:okhttp-utils:$versions.okhttpUtils"
+
+deps.arouterCompiler = "com.alibaba:arouter-compiler:$versions.arouterCompiler"
+deps.arouterApi = "com.alibaba:arouter-api:$versions.arouterApi"
+
+deps.umengAnalytics = "com.umeng.analytics:analytics:$versions.umengAnalytics"
+deps.LRecyclerView = "com.github.jdsjlzx:LRecyclerView:$versions.LRecyclerView"
+deps.youthBanner = "com.youth.banner:banner:$versions.youthBanner"
+
+deps.imagezoom = "it.sephiroth.android.library.imagezoom:library:$versions.imagezoom"
+deps.picasso = "com.squareup.picasso:picasso:$versions.picasso"
+deps.androidCrop = "com.soundcloud.android:android-crop:$versions.androidCrop"
+
+ext.deps = deps

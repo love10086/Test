@@ -1,0 +1,111 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk_version
+        targetSdkVersion build_versions.target_sdk
+        flavorDimensions "ownmall"
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+//        manifestPlaceholders = [
+//                JPUSH_PKGNAME: applicationId,
+//                JPUSH_APPKEY : "772536e38a8389adb926573b", //JPush 上注册的包名对应的 Appkey.
+//                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+//        ]
+
+
+    }
+
+    productFlavors {
+        // 开发环境
+        develop {
+            buildConfigField "String", "SERVER_URL", DEVELOP_URL
+        }
+        // gcp测试环境
+        gcp {
+            buildConfigField "String", "SERVER_URL", TEST_URL
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.android.support:support-v4:$versions.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$versions.supportLibraryVersion"
+    implementation "com.android.support:appcompat-v7:$versions.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$versions.supportLibraryVersion"
+    api "com.android.support:design:$versions.supportLibraryVersion"
+    implementation "com.android.support.constraint:constraint-layout:$versions.constraintLayout"
+//
+//    // 动画 https://github.com/florent37/ViewAnimator
+//    implementation deps.viewanimator
+//    implementation files('libs/libammsdk.jar')
+//
+//    // 网络请求
+    api "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    api "com.squareup.retrofit2:converter-gson:$versions.converterGson"
+    api "com.squareup.retrofit2:converter-scalars:$versions.converterScalars"
+    api "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.retrofit2Rxjava2Adapter"
+    api "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+    api "io.reactivex.rxjava2:rxjava:$versions.rxjava"
+    api "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3"
+    api "com.qianwen:okhttp-utils:$versions.okhttpUtils"
+//    // 图片
+    api "com.github.bumptech.glide:glide:$versions.glide"
+//    annotationProcessor deps.glideCompiler
+//
+    // 权限 https://github.com/tbruyelle/RxPermissions
+    api "com.github.tbruyelle:rxpermissions:$versions.rxpermissions"
+//
+//
+    api "com.alibaba:arouter-api:$versions.arouterApi"
+    annotationProcessor "com.alibaba:arouter-compiler:$versions.arouterCompiler"
+
+    // 状态栏沉浸：https://github.com/gyf-dev/ImmersionBar
+    api "com.gyf.barlibrary:barlibrary:$versions.barlibrary"
+    // 侧滑功能：https://github.com/bingoogolapple/BGASwipeBackLayout-Android
+    api "cn.bingoogolapple:bga-swipebacklayout:$versions.swipebacklayout"
+    api "com.google.zxing:core:$versions.zxingCore"
+    // 流式布局
+    api "com.hyman:flowlayout-lib:$versions.flowlayout"
+
+    // 友盟统计
+    api "com.umeng.analytics:analytics:$versions.umengAnalytics"
+    api "com.youth.banner:banner:$versions.youthBanner"
+
+//EventBus
+    api "org.greenrobot:eventbus:3.1.1"
+//
+    //DBFlow数据库框架
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:4.2.1"
+    api "com.github.Raizlabs.DBFlow:dbflow-core:4.2.1"
+    api "com.github.Raizlabs.DBFlow:dbflow:4.2.1"
+    // sql-cipher database encyrption (optional)
+    api "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:4.2.1"
+//
+    //极光推送
+    api 'cn.jiguang.sdk:jpush:3.2.0'  // 此处以JPush 3.2.0 版本为例。
+    api 'cn.jiguang.sdk:jcore:1.2.7'
+//    implementation project(path: ':imagepickerModule')  // 此处以JCore 1.2.7 版本为例。
+
+    //高德地图
+    //定位
+    api 'com.amap.api:location:latest.integration'
+    //3D
+    api 'com.amap.api:3dmap:latest.integration'
+
+//    //二维码生成
+//    implementation files('libs/zxing.jar')
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="divider_size">1px</dimen>
+    <dimen name="empty_view_icon_size">100dp</dimen>
+    <dimen name="empty_view_space">16dp</dimen>
+    <dimen name="empty_view_msg_textSize">16sp</dimen>
+
+    <dimen name="size_level2">12dp</dimen>
+    <dimen name="size_level4">14dp</dimen>
+    <dimen name="dialog_menu_item_height">40dp</dimen>
+    <dimen name="dialog_menu_round_size">5dp</dimen>
+    <dimen name="dialog_message_round_size">5dp</dimen>
+    <dimen name="dialog_message_width">280dp</dimen>
+</resources>
